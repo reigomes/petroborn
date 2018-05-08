@@ -31,7 +31,7 @@ export class PropertyDetailPage {
     }
 
     view(property) {
-        this.fileOpener.open('assets/reports/DRY_12345678_AAAAMM_VXX.xls', 'application/xls')
+        this.fileOpener.open('assets/reports/DRY_12345678_AAAAMM_VXX.xls', 'application/vnd.ms-excel')
         .then(() => console.log('File is opened'))
         .catch(e => console.log('Error opening file', e));
     }
@@ -50,7 +50,7 @@ export class PropertyDetailPage {
 
     share(property) {
         let actionSheet: ActionSheet = this.actionSheetCtrl.create({
-            title: 'Share via',
+            title: 'Share via2',
             buttons: [
                 {
                     text: 'Twitter',
