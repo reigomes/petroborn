@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			<span ion-text color="primary">Broker</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="broker lightest-bg">
+
+	<ion-card>
+		<ion-card-content class="profiles-bg">
+			<img src="{{broker.picture}}">
+			<h2 class="fw500">{{broker.name}}</h2>
+			<h3 ion-text color="light">{{broker.title}}</h3>
+		</ion-card-content>
+
+		<ion-grid fixed>
+			<ion-row>
+				<ion-col>
+
+					<ion-list>
+						<a href="tel:{{broker.Phone__c}}" ion-item>
+							<ion-icon name="call" item-left></ion-icon>
+							<p ion-text color="primary">Call Office</p>
+							<h2 ion-text color="dark">{{broker.phone}}</h2>
+						</a>
+						<a href="tel:{{broker.phone}}" ion-item>
+							<ion-icon name="call" item-left></ion-icon>
+							<p ion-text color="primary">Call Mobile</p>
+							<h2 ion-text color="dark">{{broker.mobilePhone}}</h2>
+						</a>
+						<a href="tel:{{broker.phone}}" ion-item>
+							<ion-icon name="text" item-left></ion-icon>
+							<p ion-text color="primary">Text</p>
+							<h2 ion-text color="dark">{{broker.mobilePhone}}</h2>
+						</a>
+						<a href="mailto:{{broker.email}}" ion-item>
+							<ion-icon name="mail" item-left></ion-icon>
+							<p ion-text color="primary">Email</p>
+							<h2 ion-text color="dark">{{broker.email}}</h2>
+						</a>
+					</ion-list>
+
+					<button ion-button icon-start large full color="dark" (click)="openChat()">
+						<ion-icon name="chatboxes"></ion-icon>
+						Chat with Broker
+					</button>
+
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+	</ion-card>
+
+</ion-content>

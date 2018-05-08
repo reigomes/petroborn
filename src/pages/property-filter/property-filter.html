@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button round color="dark" (click)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>
+    	<span ion-text color="primary">Search Filter</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item margin-bottom>
+    <ion-label color="primary" stacked>
+    	<span ion-text color="dark" class="fw500">ZipCode Area</span>
+    </ion-label>
+    <ion-input type="number" placeholder="Put your zipcode preference area"></ion-input>
+  </ion-item>
+
+	<ion-item>
+	  <ion-label class="no-margin-bottom">
+	  	<span ion-text color="dark" class="fw500">Radius:</span> <span ion-text color="primary"> {{radiusmiles}} Mile(s)</span></ion-label>
+	  <ion-range min="1" max="100" step="1" value="1" class="no-padding-top" [(ngModel)]="radiusmiles">
+	  </ion-range>
+	</ion-item>
+
+	<ion-item>
+	  <ion-label class="no-margin-bottom">
+	  	<span ion-text color="dark" class="fw500">Min/Max Bedroom(s)</span> <span ion-text color="primary"> {{minmaxbeds.lower}} to {{minmaxbeds.upper}}</span></ion-label>
+	  	<ion-range dualKnobs="true" [(ngModel)]="minmaxbeds" min="1" max="10" step="1" class="no-padding-top"></ion-range>
+	</ion-item>
+
+	<ion-item>
+	  <ion-label class="no-margin-bottom">
+	  	<span ion-text color="dark" class="fw500">Min/Max Bathroom(s):</span> <span ion-text color="primary"> {{minmaxbaths.lower}} to {{minmaxbaths.upper}}</span></ion-label>
+	  	<ion-range dualKnobs="true" [(ngModel)]="minmaxbaths" min="1" max="10" step="1" class="no-padding-top"></ion-range>
+	</ion-item>
+
+	<ion-item margin-bottom>
+	  <ion-label class="no-margin-bottom">
+	  	<span ion-text color="dark" class="fw500">Min/Max Price:</span> <span ion-text color="primary"> $ {{minmaxprice.lower}} to $ {{minmaxprice.upper}}</span></ion-label>
+	  	<ion-range dualKnobs="true" [(ngModel)]="minmaxprice" min="100000" max="5000000" step="50000" class="no-padding-top"></ion-range>
+	</ion-item>
+
+	<button ion-button block color="primary" (click)="closeModal()">Filter Results</button>
+</ion-content>

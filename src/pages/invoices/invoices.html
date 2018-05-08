@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>
+      <span ion-text color="primary">Invoices</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+  <ion-grid fixed no-padding>
+    <ion-row>
+      <ion-col col-12 no-padding>
+		    <ion-card *ngIf="!invoices.length" class="primary-bg" margin-top>
+		      <ion-card-content>
+		      	<p text-center class="text-white">You have no invoices yet.</p>
+		      </ion-card-content>
+		    </ion-card>
+
+		    <ion-item *ngFor="let invoice of invoices" tapplable (click)="itemTapped()" [ngClass]="{'detail-bg': !invoice.paid}">
+		      <ion-icon name="list-box" color="primary" item-start></ion-icon>
+		      <h4 ion-text [ngClass]="{'bold': !invoice.paid}" color="dark">{{invoice.title}} • <span ion-text color="primary" class="text-sm bold">{{invoice.date | date: 'dd/MM/yyyy'}}</span></h4>
+		      <ion-badge *ngIf="!invoice.paid" color="danger">Pending</ion-badge>
+		      <ion-badge *ngIf="invoice.paid" class="green-bg">Paid</ion-badge>
+		      <ion-badge color="secondary" item-end>{{invoice.value}}</ion-badge>
+		    </ion-item>
+		  </ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

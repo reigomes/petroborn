@@ -1,0 +1,108 @@
+<ion-split-pane when="lg">
+
+	<ion-menu side="left" id="authenticated" [content]="content" class="menu-bg">
+
+	  <ion-header>
+	    <ion-toolbar class="user-profile profiles-bg">
+
+	      <div class="user-profile">
+	        <ion-list no-margin>
+	          <ion-item>
+
+	            <ion-avatar item-left>
+	              <img src="assets/img/user.png">
+	            </ion-avatar>
+
+	            <h2 ion-text class="text-white fw700 text-15x">
+	              João de Souza
+	            </h2>
+	            <p ion-text color="light">Usuário</p>
+
+	            <ion-badge color="light" class="text-primary">
+	            	<ion-icon name="checkmark"></ion-icon> Aprovador
+	            </ion-badge>
+
+	          </ion-item>
+	        </ion-list>
+
+		      <ion-grid no-padding>
+		        <ion-row class="other-data">
+		          <ion-col text-center class="column">
+			          <button ion-button icon-start small full menuClose no-margin color="dark" (click)="openPage(accountMenuItems[1])">
+			            <ion-icon name="contact"></ion-icon>
+			            Minha conta
+			          </button>
+		          </ion-col>
+		          <ion-col text-center class="column">
+			          <button ion-button icon-start small full menuClose no-margin color="dark" (click)="openPage(accountMenuItems[0])">
+			            <ion-icon name="log-out"></ion-icon>
+			            Log Out
+			          </button>
+		          </ion-col>
+		        </ion-row>
+		      </ion-grid>
+
+	      </div>
+
+	    </ion-toolbar>
+	  </ion-header>
+
+	  <ion-content>
+
+	    <ion-list>
+	      <button menuClose ion-item (click)="openPage(homeItem)">
+	        <ion-icon item-left name="browsers"></ion-icon>
+	        Home
+	      </button>
+	      <button menuClose ion-item (click)="openPage(invoicesItem)">
+					<ion-icon item-left name="checkmark"></ion-icon>
+					Pendentes aprovação
+				</button>
+				<button menuClose ion-item (click)="openPage(messagesItem)">
+	        <ion-icon item-left name="mail"></ion-icon>
+	        Mensagens
+	      </button>
+	      <button menuClose ion-item (click)="openPage(timelineItem)">
+	        <ion-icon item-left name="clock"></ion-icon>
+	        Business Timeline
+	      </button>
+	    </ion-list>
+
+
+	    <ion-list>
+	      <ion-list-header no-margin>
+	        <span ion-text color="dark" class="fw500">Realty</span>
+	      </ion-list-header>
+	      <button menuClose ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+	        <ion-icon item-left [name]="menuItem.icon"></ion-icon>
+	        {{menuItem.title}}
+	      </button>
+	    </ion-list>
+
+	    <ion-list>
+	      <ion-list-header no-margin>
+	        <span ion-text color="dark" class="fw500">Your Property</span>
+	      </ion-list-header>
+	      <button menuClose ion-item *ngFor="let menuItem of yourPropertyMenuItems" (click)="openPage(menuItem)">
+	        <ion-icon item-left [name]="menuItem.icon"></ion-icon>
+	        {{menuItem.title}}
+	      </button>
+	    </ion-list>
+
+	    <ion-list>
+	      <ion-list-header no-margin>
+	        <span ion-text color="dark" class="fw500">Help</span>
+	      </ion-list-header>
+	      <button menuClose ion-item *ngFor="let menuItem of helpMenuItems" (click)="openPage(menuItem)">
+	        <ion-icon item-left [name]="menuItem.icon"></ion-icon>
+	        {{menuItem.title}}
+	      </button>
+	    </ion-list>
+
+	  </ion-content>
+
+	</ion-menu>
+
+	<ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+
+</ion-split-pane>

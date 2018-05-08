@@ -1,0 +1,52 @@
+<ion-content class="dark-bg">
+	<ion-grid no-padding fixed>
+		<ion-row no-padding>
+			<ion-col>
+
+				<ion-slides pager="true" dir="{{dir}}">
+					<!--
+					<ion-slide *ngFor="let slide of slideList">
+						<ion-toolbar>
+							<ion-buttons end>
+								<button ion-button class="text-white" (click)="onLastSlide()">Skip</button>
+							</ion-buttons>
+						</ion-toolbar>
+						<img [src]="slide.image" class="slide-image">
+						<h2 class="slide-title text-white" [innerHTML]="slide.title"></h2>
+						<p [innerHTML]="slide.description" class="text-white"></p>
+
+						<div padding>
+							<button ion-button round block color="secondary" margin-top icon-end (click)="onSlideNext()">
+								Next
+								<ion-icon name="arrow-round-forward" color="light"></ion-icon>
+							</button>
+						</div>
+					</ion-slide>
+					-->
+					<ion-slide>
+						<ion-toolbar>
+						</ion-toolbar>
+
+						<div padding-horizontal text-center>
+								<div class="logo">
+									<img src="assets/img/petro2.png">
+								</div>
+								<h2 ion-text class="text-white" no-margin>
+									<strong>Petroborn</strong>
+								</h2>
+							</div>
+
+						<h2 class="slide-title text-white" margin-bottom>Seja Bem Vindo</h2>
+
+						<div padding>
+							<button ion-button block round outline color="light" margin-top (click)="openAuthPage()">
+								Login / Registro
+							</button>
+						</div>
+					</ion-slide>
+				</ion-slides>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

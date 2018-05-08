@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <span ion-text color="primary">Detalhes do Relatório</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+	<ion-grid fixed>
+		<ion-row>
+			<ion-col>
+
+				<ion-card *ngIf="property.id">
+					<img src="{{property.picture}}">
+					<ion-card-content class="light-mb">
+							<h2 ion-text color="dark" class="card-title">{{property.title}}</h2>
+							<p ion-text color="primary">{{property.address}}, {{property.city}} {{property.state}}</p>
+					</ion-card-content>
+
+					<ion-list>
+						<ion-item>
+								<button ion-button icon-left (click)="view(property)" clear item-left>
+										<ion-icon name="eye"></ion-icon>
+										Visualizar
+								</button>
+						</ion-item>
+								
+						<ion-item>
+								<ion-icon item-left name="moon"></ion-icon>
+								<h3>Bedrooms</h3>
+								<ion-note item-right>{{property.bedrooms}}</ion-note>
+						</ion-item>
+						<ion-item>
+								<ion-icon item-left name="leaf"></ion-icon>
+								<h3>Bathrooms</h3>
+								<ion-note item-right>{{property.bathrooms}}</ion-note>
+						</ion-item>
+						<ion-item>
+								<ion-icon item-left name="pricetag"></ion-icon>
+								<h3>Asking Price</h3>
+								<ion-note item-right>{{property.price}}</ion-note>
+						</ion-item>
+						<button ion-item (click)="openBrokerDetail(property.broker)" color="light">
+								<ion-avatar item-left>
+										<img src="{{property.broker.picture}}"/>
+								</ion-avatar>
+								<h2 ion-text color="dark" class="fw500">{{property.broker.name}}</h2>
+								<p ion-text color="primary">{{property.broker.title}}</p>
+						</button>
+					</ion-list>
+
+					<ion-item>
+							<button ion-button icon-left (click)="favorite(property)" clear item-left>
+									<ion-icon name="eye"></ion-icon>
+									Visualizar
+							</button>
+							<button ion-button icon-left (click)="share(property)" clear item-right>
+									<ion-icon name="share"></ion-icon>
+									Share
+							</button>
+					</ion-item>
+				</ion-card>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

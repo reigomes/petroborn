@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="dark"></ion-icon>
+        </button>
+        <ion-title>
+            <span ion-text color="primary">Brokers</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+	<ion-list>
+
+		<ion-grid no-padding fixed>
+			<ion-row>
+				<ion-col col-12 col-md-6 *ngFor="let broker of brokers">
+					<button ion-item (click)="openBrokerDetail(broker)">
+						<ion-avatar item-left>
+								<img src="{{broker.picture}}"/>
+						</ion-avatar>
+						<h2 ion-text color="dark" class="fw500">{{broker.name}}</h2>
+						<p ion-text color="primary">{{broker.title}}</p>
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+	</ion-list>
+
+</ion-content>

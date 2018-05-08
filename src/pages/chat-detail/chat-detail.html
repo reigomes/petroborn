@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Michael Jones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+
+    <div class="message-wrap" padding>
+
+			<div class="message left">
+				<img class="user-img" alt="" src="../assets/img/avatar.jpeg">
+
+				<div class="msg-detail">
+					<div class="msg-info">
+							<p><span class="text-white bold">Michael Jones</span> <span ion-text color="light">a few seconds ago</span></p>
+					</div>
+					<div class="msg-content">
+							<span class="triangle"></span>
+							<p class="line-breaker ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="message right">
+				<img class="user-img" alt="" src="../assets/img/avatar.jpeg">
+
+				<div class="msg-detail">
+					<div class="msg-info">
+							<p><span class="text-white bold">Me</span> <span ion-text color="light">a few seconds ago</span></p>
+					</div>
+					<div class="msg-content">
+							<span class="triangle"></span>
+							<p class="line-breaker ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+			</div>
+
+    </div>
+
+</ion-content>
+
+<ion-footer class="dark-bg">
+  <ion-toolbar color="dark">
+
+    <ion-grid no-margin>
+      <ion-row no-margin>
+        <ion-col col col-9 no-margin no-padding>
+          <ion-item>
+            <ion-textarea placeholder="Enter Message..." rows="2" class="txt-chat"></ion-textarea>
+          </ion-item>
+        </ion-col>
+        <ion-col col col-3 no-margin no-padding>
+          <button ion-button large full color="primary" no-margin tappable icon-only>
+            <ion-icon name="send"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-footer>

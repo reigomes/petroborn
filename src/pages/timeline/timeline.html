@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu" color="primary"></ion-icon>
+    </button>
+    <ion-title>
+        <span ion-text color="primary">Business Timeline</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="lightest-bg">
+	<ul class="timeline">
+
+		<li *ngFor="let item of items">
+			<div [class]="item.dir">
+				<div class="flag-wrapper">
+					<span class="flag">{{item.title}}</span>
+					<span class="time-wrapper"><span class="time">{{item.time.subtitle}} {{item.time.title}}</span></span>
+				</div>
+				<div class="desc">{{item.content}}</div>
+			</div>
+		</li>
+
+	</ul>
+</ion-content>

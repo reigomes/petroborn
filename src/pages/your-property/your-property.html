@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="primary"></ion-icon>
+        </button>
+        <ion-title>
+            <span ion-text color="primary">Your Property</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="yourproperty lightest-bg">
+
+	<ion-grid fixed>
+		<ion-row>
+			<ion-col>
+				<ion-card class="primary-bg">
+					<ion-card-content>
+						<p class="text-white">Complete the form with your property data to find the best customers.</p>
+					</ion-card-content>
+				</ion-card>
+
+				<ion-card>
+					<ion-card-content>
+						<form [formGroup]="onYourPropertyForm" class="list-form">
+							<ion-list margin-bottom>
+								<ion-item>
+									<ion-label>Complement with my account/profile data:</ion-label>
+									<ion-checkbox formControlName="profiledata"></ion-checkbox>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('profiledata').touched && onYourPropertyForm.get('profiledata').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Property title:</ion-label>
+									<ion-input type="text" placeholder="Type here..." formControlName="propertyTitle"></ion-input>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('propertyTitle').touched && onYourPropertyForm.get('propertyTitle').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Property Address:</ion-label>
+									<ion-input type="text" placeholder="Type here..." formControlName="propertyAddress"></ion-input>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('propertyAddress').touched && onYourPropertyForm.get('propertyAddress').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Property Type:</ion-label>
+									<ion-select formControlName="propertyType">
+										<ion-option value="house">House</ion-option>
+										<ion-option value="mansion">Mansion</ion-option>
+										<ion-option value="Apartment">Apartment</ion-option>
+										<ion-option value="comroom">Commercial Room</ion-option>
+										<ion-option value="farm">Farm</ion-option>
+									</ion-select>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('propertyType').touched && onYourPropertyForm.get('propertyType').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Bed Rooms:</ion-label>
+									<ion-input type="number" placeholder="Ex.: 3" formControlName="bedrooms"></ion-input>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('bedrooms').touched && onYourPropertyForm.get('bedrooms').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Bath Rooms:</ion-label>
+									<ion-input type="number" placeholder="2" formControlName="bathrooms"></ion-input>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('bathrooms').touched && onYourPropertyForm.get('bathrooms').hasError('required')">This field is required</p>
+
+								<ion-item>
+									<ion-label color="primary" stacked>Asking Price:</ion-label>
+									<ion-input type="text" placeholder="Ex.: $600,000" formControlName="askPrice"></ion-input>
+								</ion-item>
+								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourPropertyForm.get('askPrice').touched && onYourPropertyForm.get('askPrice').hasError('required')">This field is required</p>
+
+							</ion-list>
+
+							<div padding-vertical>
+								<h5 ion-text color="dark" margin-bottom class="fw500">Add Images of Property <span ion-text class="fw300">(Max. 5)</span></h5>
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+							</div>
+
+							<button ion-button block color="dark" (click)="sendData()" [disabled]="!onYourPropertyForm.valid">Send Data</button>
+						</form>
+					</ion-card-content>
+				</ion-card>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

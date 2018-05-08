@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" color="dark"></ion-icon>
+        </button>
+        <ion-title>
+        	<span ion-text color="primary">Favorites</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+	<ion-grid *ngIf="!favorites.length" fixed>
+		<ion-row>
+			<ion-col>
+				<ion-card class="primary-bg" margin-top>
+					<ion-card-content>
+						<p text-center class="text-white">You have no favorite properties.</p>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<ion-grid fixed no-padding>
+		<ion-row>
+			<ion-col no-padding>
+				<ion-list>
+					<ion-item-sliding *ngFor="let favorite of favorites">
+							<button ion-item (click)="itemTapped(favorite)">
+									<ion-thumbnail item-left>
+											<img src="{{favorite.property.thumbnail}}"/>
+									</ion-thumbnail>
+									<h2>{{favorite.property.title}}</h2>
+									<p>{{favorite.property.city}}, {{favorite.property.state}} ∙ {{favorite.property.price}}</p>
+							</button>
+							<ion-item-options>
+									<button ion-button color="danger" (click)="deleteItem(favorite)">Delete</button>
+							</ion-item-options>
+					</ion-item-sliding>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>
