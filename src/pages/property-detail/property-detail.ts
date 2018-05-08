@@ -33,7 +33,14 @@ export class PropertyDetailPage {
     view(property) {
         this.fileOpener.open('assets/reports/DRY_DARF_20jul2009_v2.0.pdf', 'application/pdf')
         .then(() => console.log('File is opened'))
-        .catch(e => console.log('Error opening file', e));
+        .catch(e => {
+            let toast = this.toastCtrl.create({
+                message: 'Erro: ' + e,
+                cssClass: 'mytoast',
+                duration: 20000
+            });
+            toast.present(toast);
+        });
     }
 
     favorite(property) {
