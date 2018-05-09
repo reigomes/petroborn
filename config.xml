@@ -90,7 +90,7 @@
     <plugin name="cordova-sqlite-storage" spec="^2.1.4" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+    <allow-navigation href="http://169.254.1.41:8100" />
     <engine name="android" spec="6.4.0" />
     <engine name="ios" spec="^4.5.4" />
-    <allow-navigation href="http://169.254.1.41:8100" />
 </widget>
