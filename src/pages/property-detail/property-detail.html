@@ -12,54 +12,33 @@
 			<ion-col>
 
 				<ion-card *ngIf="property.id">
-					<img src="{{property.picture}}">
 					<ion-card-content class="light-mb">
 							<h2 ion-text color="dark" class="card-title">{{property.title}}</h2>
-							<p ion-text color="primary">{{property.address}}, {{property.city}} {{property.state}}</p>
+							<p ion-text color="primary">{{property.city}}</p>
 					</ion-card-content>
 
 					<ion-list>
 						<ion-item>
-								<button ion-button icon-left (click)="view(property)" clear item-left>
+								<button ion-button icon-left onclick="window.open('http://obrasim.com.br/Licenses.pdf', '_system', 'location=yes')" clear item-left>
 										<ion-icon name="eye"></ion-icon>
-										Visualizar
+										Visualizar Relatório
 								</button>
 						</ion-item>
 								
 						<ion-item>
-								<ion-icon item-left name="moon"></ion-icon>
-								<h3>Bedrooms</h3>
-								<ion-note item-right>{{property.bedrooms}}</ion-note>
-						</ion-item>
-						<ion-item>
-								<ion-icon item-left name="leaf"></ion-icon>
-								<h3>Bathrooms</h3>
-								<ion-note item-right>{{property.bathrooms}}</ion-note>
-						</ion-item>
-						<ion-item>
-								<ion-icon item-left name="pricetag"></ion-icon>
-								<h3>Asking Price</h3>
-								<ion-note item-right>{{property.price}}</ion-note>
+								<ion-icon item-left name="calendar"></ion-icon>
+								<h3>Aprovação</h3>
+								<ion-note item-right>01/04/2018 13:30</ion-note>
 						</ion-item>
 						<button ion-item (click)="openBrokerDetail(property.broker)" color="light">
 								<ion-avatar item-left>
 										<img src="{{property.broker.picture}}"/>
 								</ion-avatar>
 								<h2 ion-text color="dark" class="fw500">{{property.broker.name}}</h2>
-								<p ion-text color="primary">{{property.broker.title}}</p>
+								<p ion-text color="primary">Aprovador</p>
 						</button>
 					</ion-list>
 
-					<ion-item>
-							<button ion-button icon-left (click)="favorite(property)" clear item-left>
-									<ion-icon name="eye"></ion-icon>
-									Visualizar
-							</button>
-							<button ion-button icon-left (click)="share(property)" clear item-right>
-									<ion-icon name="share"></ion-icon>
-									Share
-							</button>
-					</ion-item>
 				</ion-card>
  
 			</ion-col>

@@ -2,10 +2,10 @@ let brokers: Array<any> = [
     {
         id: 1,
         name: "Caroline Seymor",
-        title: "Senior Broker",
-        phone: "617-244-3672",
-        mobilePhone: "617-244-3672",
-        email: "caroline@ionproperty.com",
+        title: "Técnico",
+        phone: "21 3233-3672",
+        mobilePhone: "21 98944-3672",
+        email: "caroline@petroborn.com",
         picture: "assets/img/brokers/caroline_seymor.jpg"
     },
     {

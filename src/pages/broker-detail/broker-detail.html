@@ -1,7 +1,7 @@
 <ion-header>
 	<ion-navbar>
 		<ion-title>
-			<span ion-text color="primary">Broker</span>
+			<span ion-text color="primary">Aprovador</span>
 		</ion-title>
 	</ion-navbar>
 </ion-header>
@@ -22,17 +22,17 @@
 					<ion-list>
 						<a href="tel:{{broker.Phone__c}}" ion-item>
 							<ion-icon name="call" item-left></ion-icon>
-							<p ion-text color="primary">Call Office</p>
+							<p ion-text color="primary">Escritório</p>
 							<h2 ion-text color="dark">{{broker.phone}}</h2>
 						</a>
 						<a href="tel:{{broker.phone}}" ion-item>
 							<ion-icon name="call" item-left></ion-icon>
-							<p ion-text color="primary">Call Mobile</p>
+							<p ion-text color="primary">Celular</p>
 							<h2 ion-text color="dark">{{broker.mobilePhone}}</h2>
 						</a>
 						<a href="tel:{{broker.phone}}" ion-item>
 							<ion-icon name="text" item-left></ion-icon>
-							<p ion-text color="primary">Text</p>
+							<p ion-text color="primary">SMS</p>
 							<h2 ion-text color="dark">{{broker.mobilePhone}}</h2>
 						</a>
 						<a href="mailto:{{broker.email}}" ion-item>
@@ -44,7 +44,7 @@
 
 					<button ion-button icon-start large full color="dark" (click)="openChat()">
 						<ion-icon name="chatboxes"></ion-icon>
-						Chat with Broker
+						Converse com Aprovador
 					</button>
 
 				</ion-col>

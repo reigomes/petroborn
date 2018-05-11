@@ -28,7 +28,7 @@
 		      <ion-grid no-padding>
 		        <ion-row class="other-data">
 		          <ion-col text-center class="column">
-			          <button ion-button icon-start small full menuClose no-margin color="dark" (click)="openPage(accountMenuItems[1])">
+			          <button ion-button icon-start small full menuClose no-margin color="dark">
 			            <ion-icon name="contact"></ion-icon>
 			            Minha conta
 			          </button>
@@ -54,40 +54,12 @@
 	        <ion-icon item-left name="browsers"></ion-icon>
 	        Home
 	      </button>
-	      <button menuClose ion-item (click)="openPage(invoicesItem)">
-					<ion-icon item-left name="checkmark"></ion-icon>
-					Pendentes aprovação
-				</button>
 				<button menuClose ion-item (click)="openPage(messagesItem)">
 	        <ion-icon item-left name="mail"></ion-icon>
 	        Mensagens
 	      </button>
-	      <button menuClose ion-item (click)="openPage(timelineItem)">
-	        <ion-icon item-left name="clock"></ion-icon>
-	        Business Timeline
-	      </button>
 	    </ion-list>
 
-
-	    <ion-list>
-	      <ion-list-header no-margin>
-	        <span ion-text color="dark" class="fw500">Realty</span>
-	      </ion-list-header>
-	      <button menuClose ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
-	        <ion-icon item-left [name]="menuItem.icon"></ion-icon>
-	        {{menuItem.title}}
-	      </button>
-	    </ion-list>
-
-	    <ion-list>
-	      <ion-list-header no-margin>
-	        <span ion-text color="dark" class="fw500">Your Property</span>
-	      </ion-list-header>
-	      <button menuClose ion-item *ngFor="let menuItem of yourPropertyMenuItems" (click)="openPage(menuItem)">
-	        <ion-icon item-left [name]="menuItem.icon"></ion-icon>
-	        {{menuItem.title}}
-	      </button>
-	    </ion-list>
 
 	    <ion-list>
 	      <ion-list-header no-margin>

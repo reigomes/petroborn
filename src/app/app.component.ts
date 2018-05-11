@@ -66,8 +66,8 @@ export class ionPropertyApp {
 		];
 
 		this.helpMenuItems = [
-			{title: 'About', component: 'page-about', icon: 'information-circle'},
-			{title: 'Support', component: 'page-support', icon: 'information-circle'}
+			{title: 'Sobre', component: 'page-about', icon: 'information-circle'},
+			{title: 'Suporte', component: 'page-support', icon: 'information-circle'}
 		];
 
 	}
